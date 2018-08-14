@@ -45,3 +45,11 @@ void Jugador::setUnidades(int pUnidades) {
 int Jugador::getUnidades() {
 	return this->unidades;
 }
+
+void registrarMovimiento() {
+
+};
+
+//std::string toString() {
+//	return "";
+//};
