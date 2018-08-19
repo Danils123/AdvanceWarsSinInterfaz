@@ -8,12 +8,12 @@
 using namespace std;
 template <typename T>
 
-class Colas : public Lista
+class Colas : public Lista <T>
 {
 
 public:
-	virtual void encolar(T);
-	virtual void descolar(T);
+	virtual void encolar(T) = 0;
+	virtual void descolar(T) = 0;
 };
 
 #endif

@@ -4,6 +4,7 @@
 class Unidad
 {
 public:
+	Unidad();
 	Unidad(int, int, int, int, int, int);
 	~Unidad();
 
@@ -12,7 +13,9 @@ public:
 	void setTipo(int);
 	void setPosX(int);
 	void setPosY(int);
-	void setEstado(int);
+	void setEstado(bool);
+	void setId(int);
+
 
 	int getVida();
 	int getRango();
@@ -20,7 +23,9 @@ public:
 	int getPosX();
 	int getPosY();
 	int getEstado();
+	int getId();
 private:
+	int id;
 	int vida;
 	int rango;
 	TipoUnidades tipo;

@@ -39,9 +39,6 @@
     <ClInclude Include="Lista.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pila.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PilaUnidades.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -81,6 +78,9 @@
     <ClInclude Include="PilaHistorial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Pila.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -98,9 +98,6 @@
     <ClCompile Include="Casilla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PilaUnidades.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="NodoUnidades.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -108,18 +105,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="NodoHistorial.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PilaJugadores.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ColaJugadores.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ColaUnidades.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ColaHistorial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ListaJugadores.cpp">
@@ -132,9 +117,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Juego.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PilaHistorial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
