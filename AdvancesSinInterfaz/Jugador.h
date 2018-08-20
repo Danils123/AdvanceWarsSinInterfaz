@@ -10,8 +10,9 @@ template <class T, class U>
 class Jugador
 {
 public:
-	//Jugador(int, int);
-	//~Jugador();
+	Jugador();
+	Jugador(int, int);
+	~Jugador();
 	Colores getColor();
 
 	void setColor(int);
