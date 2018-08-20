@@ -38,15 +38,8 @@ void Jugador<T,  U>::setColor(int pColor) {
 
 	color = colorP;
 }
-<<<<<<< HEAD
-template <typename T>
-void Jugador<T>::setUnidades(ListaUnidades<Unidad>* pUnidades) {
-	this->unidades = pUnidades;
-}
 
-template <typename T>
-ListaUnidades<Unidad>* Jugador<T>::getUnidades() {
-=======
+
 template <class T, class U>
 void Jugador<T,  U>::setUnidades(int pUnidades) {
 	this->unidades = pUnidades;
@@ -54,7 +47,6 @@ void Jugador<T,  U>::setUnidades(int pUnidades) {
 
 template <class T, class U>
 int Jugador<T,  U>::getUnidades() {
->>>>>>> SinItnterfaz
 	return this->unidades;
 }
 template <class T, class U>
@@ -62,8 +54,8 @@ void Jugador<T,  U>::registrarMovimiento() {
 
 };
 
-template <class T>
-void Jugador<T>::inicializarListaUnidades(int nJugador)
+template <class T, class U>
+void Jugador<T, U>::inicializarListaUnidades(int nJugador)
 {
 	ListaUnidades<T>* lista;
 	int posInX = 0;

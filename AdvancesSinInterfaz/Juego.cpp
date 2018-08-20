@@ -23,26 +23,26 @@ void Juego::setTerreno(Casilla** nTerreno)
 	this->terreno = nTerreno;
 }
 
-
-Jugador<T>* Juego::getJugadorA()
+template <class T, class U>
+Jugador<T, U>* Juego::getJugadorA()
 {
 	return this->jugadorA;
 }
 
-
-void Juego::setJugadorA(Jugador<T>* nJugadorA)
+template <class T, class U>
+void Juego::setJugadorA(Jugador<T, U>* nJugadorA)
 {
 	this->jugadorA = nJugadorA;
 }
 
-
-Jugador<T>* Juego::getJugadorB()
+template <class T, class U>
+Jugador<T, U>* Juego::getJugadorB()
 {
 	return this->jugadorB;
 }
 
-
-void Juego::setJugadorB(Jugador<T>* nJugadorB)
+template <class T, class U>
+void Juego::setJugadorB(Jugador<T, U>* nJugadorB)
 {
 	this->jugadorB = nJugadorB;
 }
@@ -67,36 +67,37 @@ void Juego::setTurno(bool nTurno)
 	this->turno = nTurno;
 }
 
-
-ColaHistorial<Historial>* Juego::getHistorial()
+template <class T, class U>
+ColaHistorial<T, U>* Juego::getHistorial()
 {
 	return this->historial;
 }
 
-void Juego::setHistorial(ColaHistorial<Historial>* nHistorial)
+template <class T, class U>
+void Juego::setHistorial(ColaHistorial<T, U>* nHistorial)
 {
 	this->historial = nHistorial;
 }
 
-
+template <class T, class U>
 std::string Juego::atacar(int tipoUnidad, std::vector<int> pocisionAtacar)
 {
 	std::string resultado = "";
 	
-	Jugador<T>* jugadorActivo;
+	Jugador<T, U>* jugadorActivo;
 
 	if(this->turno)
 	{
-		template <class T>
+		//template <class T, class U>
 		jugadorActivo = this->getJugadorA();
 	}
 	else
 	{
-		template <class T >
+		//template <class T, class U>
 		jugadorActivo = this->getJugadorB();
 	}
 
-	template <class T>
+	//template <class T, class U>
 	Unidad* unidad = jugadorActivo->getUnidades()->buscar(tipoUnidad)->getUnidad();
 	
 
@@ -110,11 +111,11 @@ bool Juego::mover(int equipo, int tipoUnidad, std::vector<int> pocisionMover)
 	return movio;
 }
 
-
+template <class T, class U>
 bool Juego::agregarJugador(int color, int equipo) 
 {
 	bool agregado = false;	
-	Jugador<T> *jugador = new Jugador<T>;
+	Jugador<T, U> *jugador = new Jugador<T, U>;
 	jugador->setColor(color);
 	if(this->getJugadorA() != NULL)
 	{
