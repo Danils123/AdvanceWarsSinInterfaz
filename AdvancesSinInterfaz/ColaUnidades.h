@@ -10,7 +10,7 @@ class ColaUnidades: public Colas <T>
 {
 public:
 	virtual void insertar(Unidad unidad, NodoUnidades* cabeza) {
-		encolar(cabeza, ultimo);
+		encolar(cabeza, cabeza);
 	};
 
 	virtual void eliminar(const int idx, const NodoUnidades* cabeza) {
@@ -22,7 +22,7 @@ public:
 		cabeza->setSig(nuevo);
 	};
 
-	void descolar(const int idx, const NodoUnidades* cabeza) {
+	void descolar(const NodoUnidades* cabeza) {
 		NodoUnidades* aux = cabeza;
 		cabeza = aux->getSig();
 		delete aux;

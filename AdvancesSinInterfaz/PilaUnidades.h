@@ -2,7 +2,7 @@
 #define PILAUNIDADES_H
 #include "Pila.h"
 #include "NodoUnidades.h"
-#include "Unidad.h"
+
 using namespace std;
 
 template <typename T>
@@ -13,8 +13,8 @@ public:
 		apilar(unidad, ultimo);
 	};
 
-	virtual void eliminar(const int idx, const NodoUnidades* ultimo) {
-		desapilar(idx, ultimo);
+	virtual void eliminar(const NodoUnidades* ultimo) {
+		desapilar(ultimo);
 	};
 
 	virtual void apilar(Unidad unidad, NodoUnidades* ultimo) 
@@ -24,7 +24,7 @@ public:
 		ultimo = nuevo;
 	};
 
-	virtual void desapilar(const int idx, const NodoUnidades* ultimo) 
+	virtual void desapilar(const NodoUnidades* ultimo) 
 	{	
 		NodoUnidades* aux = ultimo;
 		ultimo = aux->getSig();

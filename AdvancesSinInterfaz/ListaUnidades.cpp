@@ -2,6 +2,7 @@
 #include "ListaUnidades.h"
 #include "PilaUnidades.h"
 #include "ColaUnidades.h"
+#include <sstream>
 
 template <typename T>
 ListaUnidades<T>::ListaUnidades()
@@ -15,13 +16,13 @@ NodoUnidades* ListaUnidades<T>::getCabeza() {
 };
 
 template <typename T>
-void ListaUnidades<T>::setCabeza(NodoUnidades*) {
-	return getCabeza() == NULL;
+void ListaUnidades<T>::setCabeza(NodoUnidades* pcabeza) {
+	cabeza = pcabeza;
 };
 
 template <typename T>
 bool ListaUnidades<T>::isListaVacia() {
-	return true;
+	return getCabeza() == NULL;
 };
 
 template <typename T>
@@ -55,13 +56,38 @@ void ListaUnidades<T>::insertar(int pId, int pVida, int pRango, int pTipo, int p
 };
 
 template <typename T>
-void ListaUnidades<T>::eliminar(int id) {
-	lista.eliminar(id, getCabeza());
+void ListaUnidades<T>::eliminar() {
+	lista.eliminar(getCabeza());
 };
 
 template <typename T>
 std::string ListaUnidades<T>::toString() {
-	 
+	std::ostringstream s;
+	if (!isListaVacia()) {
+		NodoUnidades* aux = getCabeza();
+		while (aux != NULL) {
+			/*s << "\n";
+			s << "Nombre: ";
+			s << aux->getPersona().getNombre();
+			s << "\n";
+			s << "Apellidos: ";
+			s << aux->getPersona().getApellidos();
+			s << "\n";
+			s << "Cedula: ";
+			s << aux->getPersona().getCedula();
+			s << "\n";
+			s << "Domicio: ";
+			s << aux->getPersona().getDomicilio();
+			s << "\n";
+			s << "\n";
+			s << "\n";*/
+			aux = aux->getSiguiente();
+		};
+	}
+	else {
+		s << "Lista vacia";
+	}
+	return s.str();
 };
 
 template <typename T>
@@ -84,4 +110,9 @@ void ListaUnidades<T>::setLista(int tipo) {
 			break;
 		}
 	}
+};
+
+template <typename T>
+void ListaUnidades<T>::reducirVida(int valor) {
+	
 };

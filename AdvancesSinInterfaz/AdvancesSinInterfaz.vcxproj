@@ -149,22 +149,19 @@
   <ItemGroup>
     <ClInclude Include="Casilla.h" />
     <ClInclude Include="ColaHistorial.h" />
-    <ClInclude Include="ColaJugadores.h" />
     <ClInclude Include="Colas.h" />
     <ClInclude Include="ColaUnidades.h" />
     <ClInclude Include="Enums.h" />
+    <ClInclude Include="Historial.h" />
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaHistorial.h" />
-    <ClInclude Include="ListaJugadores.h" />
     <ClInclude Include="ListaUnidades.h" />
     <ClInclude Include="NodoHistorial.h" />
-    <ClInclude Include="NodoJugadores.h" />
     <ClInclude Include="NodoUnidades.h" />
     <ClInclude Include="Pila.h" />
     <ClInclude Include="PilaHistorial.h" />
-    <ClInclude Include="PilaJugadores.h" />
     <ClInclude Include="PilaUnidades.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -173,13 +170,12 @@
   <ItemGroup>
     <ClCompile Include="AdvancesSinInterfaz.cpp" />
     <ClCompile Include="Casilla.cpp" />
+    <ClCompile Include="Historial.cpp" />
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="ListaHistorial.cpp" />
-    <ClCompile Include="ListaJugadores.cpp" />
     <ClCompile Include="ListaUnidades.cpp" />
     <ClCompile Include="NodoHistorial.cpp" />
-    <ClCompile Include="NodoJugadores.cpp" />
     <ClCompile Include="NodoUnidades.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

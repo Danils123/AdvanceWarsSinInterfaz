@@ -14,10 +14,11 @@ public:
 	bool isListaVacia();
 	NodoUnidades* buscar(int);
 	void insertar(int, int, int, int, int, int);
-	void eliminar(int);
+	void eliminar();
 	std::string toString();
 	void setLista(int);
 	Unidad setUnidad(int, int, int, int, int, int);
+	void reducirVida(int);
 private:
 	Lista< T > lista;
 	NodoUnidades* cabeza;

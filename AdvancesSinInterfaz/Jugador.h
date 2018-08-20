@@ -1,8 +1,11 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 #include "Enums.h"
-#include "ListaHistorial.h"
+#include "ListaUnidades.h"
 #include <string>
+using namespace std;
+
+template <typename T>
 class Jugador
 {
 public:
@@ -23,8 +26,7 @@ public:
 private:
 
 	Colores color;
-	int unidades;
-	ListaHistorial* historial;
+	ListaUnidades<T>* unidades;
 };
 
 #endif /* JUGADOR_H */
