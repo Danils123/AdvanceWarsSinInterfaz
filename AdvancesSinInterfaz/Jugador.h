@@ -26,7 +26,7 @@ public:
 private:
 
 	Colores color;
-	ListaUnidades<T>* unidades;
+	ListaUnidades<T> unidades;
 };
 
 #endif /* JUGADOR_H */

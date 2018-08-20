@@ -6,7 +6,7 @@
 
 #include <string>
 using namespace std;
-template <typename T>
+template <class T>
 
 class Colas : public Lista <T>
 {

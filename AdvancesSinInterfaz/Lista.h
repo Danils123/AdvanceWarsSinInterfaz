@@ -2,7 +2,7 @@
 #define LISTA_H
 #include "stdafx.h"
 #include <string>
-template <typename T>
+template <class T>
 class Lista
 {
 
