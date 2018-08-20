@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "Jugador.h"
 
+template <class T, class U>
+Jugador<T, U>::Jugador() {
+
+};
 //
 //Jugador::Jugador(int color, int unidades)
 //{

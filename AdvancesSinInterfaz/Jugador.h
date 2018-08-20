@@ -9,6 +9,7 @@ template <class T, class U>
 class Jugador
 {
 public:
+	Jugador();
 	Jugador(int, int);
 	~Jugador();
 	Colores getColor();

@@ -22,22 +22,22 @@ void Juego::setTerreno(Casilla** nTerreno)
 	this->terreno = nTerreno;
 }
 
-Jugador Juego::getJugadorA()
+Jugador<Unidad, NodoUnidades*> Juego::getJugadorA()
 {
 	return this->jugadorA;
 }
 
-void Juego::setJugadorA(Jugador nJugadorA)
+void Juego::setJugadorA(Jugador<Unidad, NodoUnidades*> nJugadorA)
 {
 	this->jugadorA = nJugadorA;
 }
 
-Jugador Juego::getJugadorB()
+Jugador<Unidad, NodoUnidades*> Juego::getJugadorB()
 {
 	return this->jugadorB;
 }
 
-void Juego::setJugadorB(Jugador nJugadorB)
+void Juego::setJugadorB(Jugador<Unidad, NodoUnidades*> nJugadorB)
 {
 	this->jugadorB = nJugadorB;
 }
@@ -62,12 +62,12 @@ void Juego::setTurno(bool nTurno)
 	this->turno = nTurno;
 }
 
-ColaHistorial* Juego::getHistorial()
+ColaHistorial<Historial, NodoHistorial*> *Juego::getHistorial()
 {
 	return this->historial;
 }
 
-void Juego::setHistorial(ColaHistorial* nHistorial)
+void Juego::setHistorial(ColaHistorial<Historial, NodoHistorial*>* nHistorial)
 {
 	this->historial = nHistorial;
 }
