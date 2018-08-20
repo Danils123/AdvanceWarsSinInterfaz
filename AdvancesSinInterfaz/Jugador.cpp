@@ -39,12 +39,12 @@ void Jugador<T>::setColor(int pColor) {
 	color = colorP;
 }
 template <typename T>
-void Jugador<T>::setUnidades(ListaUnidades<T>* pUnidades) {
+void Jugador<T>::setUnidades(ListaUnidades<Unidad>* pUnidades) {
 	this->unidades = pUnidades;
 }
 
 template <typename T>
-ListaUnidades<T>* Jugador<T>::getUnidades() {
+ListaUnidades<Unidad>* Jugador<T>::getUnidades() {
 	return this->unidades;
 }
 template <typename T>
@@ -53,12 +53,26 @@ void Jugador<T>::registrarMovimiento() {
 };
 
 template <class T>
-void Jugador<T>::inicializarListaUnidades()
+void Jugador<T>::inicializarListaUnidades(int nJugador)
 {
 	ListaUnidades<T>* lista;
-	lista->insertar(0, 5, 3, 0, 0, 0);
-	lista->insertar(1, 3, 2, 1, 0, 1);
-	lista->insertar(2, 7, 4, 2, 1, 0);
+	int posInX = 0;
+	int posInY = 0;
+
+	if(nJugador == 2)
+	{
+		posInX = 3;
+		posInY = 5;
+
+		lista->insertar(0, 5, 3, 0, posInX, posInY);
+		lista->insertar(1, 3, 2, 1, posInX, posInY - 1);
+		lista->insertar(2, 7, 4, 2, posInX -1, posInY);
+		this->setUnidades(lista);
+	}
+	
+	lista->insertar(0, 5, 3, 0, posInX, posInY);
+	lista->insertar(1, 3, 2, 1, posInX, posInY + 1);
+	lista->insertar(2, 7, 4, 2, posInX + 1, posInY);
 	this->setUnidades(lista);
 }
 //std::string toString() {

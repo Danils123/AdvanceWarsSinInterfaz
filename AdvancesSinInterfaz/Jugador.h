@@ -5,6 +5,7 @@
 #include <string>
 using namespace std;
 
+
 template <typename T>
 class Jugador
 {
@@ -15,12 +16,13 @@ public:
 
 	void setColor(int);
 
-	void setUnidades(ListaUnidades<T>);
+	void setUnidades(ListaUnidades<T>*);
 
-    ListaUnidades<T>* getUnidades();
+    ListaUnidades<Unidad>* getUnidades();
 
 	void registrarMovimiento();
 	
+	template <class T>
 	void inicializarListaUnidades();
 
 	/*std::string toString();*/

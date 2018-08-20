@@ -6,7 +6,8 @@
 #ifndef JUEGO_H
 #define JUEGO_H
 
-Jugador <class T>;
+template class Jugador <class T>;
+
 class Juego
 {
 public:
@@ -35,7 +36,7 @@ private:
 	Jugador<T>* jugadorB;
 	bool isGanador;
 	bool turno;
-	ColaHistorial<T>* historial;
+	ColaHistorial<Historial>* historial;
 };
 
 #endif /*JUEGO_H*/
