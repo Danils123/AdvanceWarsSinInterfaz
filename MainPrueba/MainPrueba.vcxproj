@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E6ED8266-9A52-44E3-A42E-78B3D2510A65}</ProjectGuid>
+    <ProjectGuid>{1455F66D-58CF-484D-AEB5-FF89A71904CD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>AdvancesSinInterfaz</RootNamespace>
+    <RootNamespace>MainPrueba</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -147,43 +147,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Casilla.h" />
-    <ClInclude Include="ColaHistorial.h" />
-    <ClInclude Include="Colas.h" />
-    <ClInclude Include="ColaUnidades.h" />
-    <ClInclude Include="Enums.h" />
-    <ClInclude Include="Historial.h" />
-    <ClInclude Include="Juego.h" />
-    <ClInclude Include="Jugador.h" />
     <ClInclude Include="Lista.h" />
-    <ClInclude Include="ListaHistorial.h" />
-    <ClInclude Include="ListaUnidades.h" />
-    <ClInclude Include="NodoHistorial.h" />
-    <ClInclude Include="NodoUnidades.h" />
+    <ClInclude Include="Nodo.h" />
     <ClInclude Include="Pila.h" />
-    <ClInclude Include="PilaHistorial.h" />
-    <ClInclude Include="PilaUnidades.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Unidad.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AdvancesSinInterfaz.cpp" />
-    <ClCompile Include="Casilla.cpp" />
-    <ClCompile Include="Historial.cpp" />
-    <ClCompile Include="Juego.cpp" />
-    <ClCompile Include="Jugador.cpp" />
-    <ClCompile Include="ListaHistorial.cpp" />
-    <ClCompile Include="ListaUnidades.cpp" />
-    <ClCompile Include="NodoHistorial.cpp" />
-    <ClCompile Include="NodoUnidades.cpp" />
+    <ClCompile Include="Lista.cpp" />
+    <ClCompile Include="MainPrueba.cpp" />
+    <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Unidad.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

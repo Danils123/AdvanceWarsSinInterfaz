@@ -8,12 +8,16 @@
 using namespace std;
 template <typename T>
 
+<<<<<<< HEAD
 class Colas : public Lista<T>
+=======
+class Colas : public Lista <T>
+>>>>>>> SinItnterfaz
 {
 
 public:
-	virtual void encolar(T);
-	virtual void descolar(T);
+	virtual void encolar(T) = 0;
+	virtual void descolar(T) = 0;
 };
 
 #endif

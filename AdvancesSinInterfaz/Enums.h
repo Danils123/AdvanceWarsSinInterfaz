@@ -5,6 +5,6 @@ enum Colores { ROJO, VERDE,AZUL, AMARRILLO };
 enum TipoUnidades { AEREA, SOLDADO, TANQUE};
 
 static const char* ColoresNames[] = { "ROJO", "VERDE", "AZUL", "AMARRILLO" };
-static const char* AulasNames[] = { "A","B","C","D","E","F" };
+static const char* TipoNames[] = { "AEREA", "SOLDADO", "TANQUE" };
 
 #endif /* ENUMS_H */

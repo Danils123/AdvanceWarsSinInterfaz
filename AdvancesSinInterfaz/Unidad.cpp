@@ -1,10 +1,20 @@
 #include "stdafx.h"
 #include "Unidad.h"
 
+Unidad::Unidad() {
+	setId(0);
+	setEstado(true);
+	setPosX(0);
+	setPosY(0);
+	setRango(1);
+	setTipo(1);
+	setVida(100);
+};
 
-Unidad::Unidad(int vida, int rango, int tipo, int x, int y, int estado)
+Unidad::Unidad(int id, int vida, int rango, int tipo, int x, int y)
 {
-	setEstado(estado);
+	setId(id);
+	setEstado(true);
 	setPosX(x);
 	setPosY(y);
 	setRango(rango);
@@ -55,7 +65,7 @@ void Unidad::setPosY(int pY) {
 	posX = pY;
 };
 
-void Unidad::setEstado(int pEstado) {
+void Unidad::setEstado(bool pEstado) {
 	estado = pEstado;
 };
 
@@ -81,4 +91,12 @@ int Unidad::getPosY() {
 
 int Unidad::getEstado() {
 	return estado;
+};
+
+void Unidad::setId(int pId) {
+	id = pId;
+};
+
+int Unidad::getId() {
+	return id;
 };

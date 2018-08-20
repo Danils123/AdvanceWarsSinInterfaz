@@ -1,23 +1,24 @@
 #include "stdafx.h"
 #include "Jugador.h"
 
-
-Jugador::Jugador(int color, int unidades)
-{
-	setColor(color);
-	setUnidades(unidades);
-}
-
-
-Jugador::~Jugador()
-{
-}
-
-Colores Jugador::getColor() {
+//
+//Jugador::Jugador(int color, int unidades)
+//{
+//	setColor(color);
+//	setUnidades(unidades);
+//}
+//
+//
+//Jugador::~Jugador()
+//{
+//}
+template <typename T>
+Colores Jugador<T>::getColor() {
 	return this->color;
 }
 
-void Jugador::setColor(int pColor) {
+template <typename T>
+void Jugador<T>::setColor(int pColor) {
 	Colores colorP;
 	switch (pColor)
 	{
@@ -37,16 +38,17 @@ void Jugador::setColor(int pColor) {
 
 	color = colorP;
 }
-
-void Jugador::setUnidades(int pUnidades) {
+template <typename T>
+void Jugador<T>::setUnidades(int pUnidades) {
 	this->unidades = pUnidades;
 }
 
-int Jugador::getUnidades() {
+template <typename T>
+int Jugador<T>::getUnidades() {
 	return this->unidades;
 }
-
-void registrarMovimiento() {
+template <typename T>
+void Jugador<T>::registrarMovimiento() {
 
 };
 
