@@ -10,6 +10,10 @@ Casilla::Casilla(int x, int y, bool tieneUnidades, int jugador)
 	setY(y);
 }
 
+Casilla::Casilla()
+{
+}
+
 Casilla::~Casilla()
 {
 }

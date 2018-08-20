@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{8D0A1767-D547-44B7-89D2-3FD9D0ED70F7}</ProjectGuid>
+    <RootNamespace>AWC</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\AdvancesSinInterfaz\Casilla.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\ColaHistorial.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\ColaJugadores.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\Colas.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\ColaUnidades.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\Enums.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\FilaUnidades.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\Juego.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\Jugador.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\Lista.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\ListaHistorial.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\ListaJugadores.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\ListaUnidades.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\NodoHistorial.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\pila.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\PilaHistorial.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\PilaJugadores.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\PilaUnidades.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\stdafx.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\targetver.h" />
+    <ClInclude Include="..\..\AdvancesSinInterfaz\Unidad.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\AdvancesSinInterfaz\AdvancesSinInterfaz.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\Casilla.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\ColaHistorial.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\ColaJugadores.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\Colas.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\ColaUnidades.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\FilaUnidades.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\Juego.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\Jugador.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\Lista.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\ListaHistorial.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\ListaJugadores.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\ListaUnidades.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\NodoHistorial.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\NodoJugadores.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\NodoUnidades.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\PilaHistorial.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\PilaJugadores.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\PilaUnidades.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\stdafx.cpp" />
+    <ClCompile Include="..\..\AdvancesSinInterfaz\Unidad.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
