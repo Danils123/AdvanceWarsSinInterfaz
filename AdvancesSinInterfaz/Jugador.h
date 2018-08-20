@@ -9,8 +9,8 @@ template <typename T>
 class Jugador
 {
 public:
-	Jugador(int, int);
-	~Jugador();
+	//Jugador(int, int);
+	//~Jugador();
 	Colores getColor();
 
 	void setColor(int);
@@ -30,3 +30,4 @@ private:
 };
 
 #endif /* JUGADOR_H */
+	

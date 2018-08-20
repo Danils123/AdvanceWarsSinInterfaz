@@ -1,5 +1,4 @@
 #include "Casilla.h"
-#include "ListaJugadores.h"
 #include "ColaHistorial.h"
 #include "Jugador.h"
 #include <string>
@@ -14,16 +13,20 @@ public:
 	~Juego();
 	Casilla** getTerreno();
 	void setTerreno(Casilla**);
-	Jugador getJugadorA();
-	void setJugadorA(Jugador);
-	Jugador getJugadorB();
-	void setJugadorB(Jugador);
+	template <class T>
+	Jugador<T> getJugadorA();
+	template <class T>
+	void setJugadorA(Jugador<T>);
+	template <class T>
+	Jugador<T> getJugadorB();
+	template <class T>
+	void setJugadorB(Jugador<T>);
 	bool getIsGanador();
 	void setIsGanador(bool);
 	bool getTurno();
 	void setTurno(bool);
-	ColaHistorial* getHistorial();
-	void setHistorial(ColaHistorial*);
+	ColaHistorial<Historial>* getHistorial();
+	void setHistorial(ColaHistorial<Historial>*);
 	std::string atacar(int, std::vector<int>);
 	bool mover(int, int, std::vector<int>);
 	bool agregarJugador(int, int);
@@ -31,11 +34,14 @@ public:
 	std::string obtenerEstadoJuego(int);
 private:
 	Casilla** terreno;
-	Jugador jugadorA;
-	Jugador jugadorB;
+	template <class T>
+	Jugador<T> jugadorA;
+	template <class T>
+	Jugador<T> jugadorB;
 	bool isGanador;
 	bool turno;
-	ColaHistorial* historial;
+	template <class T>
+	ColaHistorial<T>* historial;
 };
 
 #endif /*JUEGO_H*/

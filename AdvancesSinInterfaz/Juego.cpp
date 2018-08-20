@@ -22,22 +22,26 @@ void Juego::setTerreno(Casilla** nTerreno)
 	this->terreno = nTerreno;
 }
 
-Jugador Juego::getJugadorA()
+template <class T>
+Jugador<T> Juego::getJugadorA()
 {
 	return this->jugadorA;
 }
 
-void Juego::setJugadorA(Jugador nJugadorA)
+template<class T>
+void Juego::setJugadorA(Jugador<T> nJugadorA)
 {
 	this->jugadorA = nJugadorA;
 }
 
-Jugador Juego::getJugadorB()
+template <class T>
+Jugador<T> Juego::getJugadorB()
 {
 	return this->jugadorB;
 }
 
-void Juego::setJugadorB(Jugador nJugadorB)
+template <class T>
+void Juego::setJugadorB(Jugador<T> nJugadorB)
 {
 	this->jugadorB = nJugadorB;
 }
@@ -62,19 +66,40 @@ void Juego::setTurno(bool nTurno)
 	this->turno = nTurno;
 }
 
-ColaHistorial* Juego::getHistorial()
+template <class T>
+ColaHistorial<T>* Juego::getHistorial()
 {
 	return this->historial;
 }
 
-void Juego::setHistorial(ColaHistorial* nHistorial)
+template <class T>
+void Juego::setHistorial(ColaHistorial<T>* nHistorial)
 {
 	this->historial = nHistorial;
 }
 
+
 std::string Juego::atacar(int tipoUnidad, std::vector<int> pocisionAtacar)
 {
 	std::string resultado = "";
+	template <class T>
+	Jugador<T> jugadorActivo;
+	Unidad unidad;
+	unidad.setTipo(tipoUnidad);
+	if(this->turno)
+	{
+		template <class T>
+		jugadorActivo = this->getJugadorA();
+	}
+	else
+	{
+		template <class T>
+		jugadorActivo = this->getJugadorB;
+	}
+
+	template <class t>
+	jugadorActivo.getUnidad(unidad.getTipo());
+
 	return resultado;
 }
 
@@ -84,9 +109,19 @@ bool Juego::mover(int equipo, int tipoUnidad, std::vector<int> pocisionAtacar)
 	return ataco;
 }
 
+template <class T>
 bool Juego::agregarJugador(int color, int equipo) 
 {
-	bool agregado = false;
+	bool agregado = false;	
+	Jugador<T> jugador = new Jugador(color, equipo);
+	if(this->getJugadorA() != false)
+	{
+		this->setJugadorB(jugador);
+	}
+	else 
+	{
+		this->setJugadorA(jugador);
+	}
 	return agregado;
 }
 

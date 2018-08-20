@@ -6,13 +6,9 @@
 
 #include <string>
 using namespace std;
-template <typename T>
 
-<<<<<<< HEAD
-class Colas : public Lista<T>
-=======
+template <typename T>
 class Colas : public Lista <T>
->>>>>>> SinItnterfaz
 {
 
 public:
