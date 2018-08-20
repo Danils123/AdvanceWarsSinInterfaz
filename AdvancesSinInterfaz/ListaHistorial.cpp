@@ -78,11 +78,11 @@ void ListaHistorial<T>::setLista(int tipo) {
 template <typename T>
 Historial ListaHistorial<T>::setRegistro(int jugador, std::vector<int> movimiento, int tipoUnidadAtacado, int tipoUnidadAtacante, int turno) {
 	Historial registro;
-	setJugador(jugador);
-	setMovimiento(movimiento);
-	setTipoUnidadAtacado(tipoUnidadAtacado);
-	setTipoUnidadAtacante(tipoUnidadAtacante);
-	setTurno(turno);
+	registro.setJugador(jugador);
+	registro.setMovimiento(movimiento);
+	registro.setTipoUnidadAtacado(tipoUnidadAtacado);
+	registro.setTipoUnidadAtacante(tipoUnidadAtacante);
+	registro.setTurno(turno);
 
 	return registro;
 };
