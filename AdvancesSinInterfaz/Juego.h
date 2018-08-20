@@ -6,6 +6,7 @@
 #ifndef JUEGO_H
 #define JUEGO_H
 
+Jugador <class T>;
 class Juego
 {
 public:
@@ -13,14 +14,10 @@ public:
 	~Juego();
 	Casilla** getTerreno();
 	void setTerreno(Casilla**);
-	template <class T>
-	Jugador<T> getJugadorA();
-	template <class T>
-	void setJugadorA(Jugador<T>);
-	template <class T>
-	Jugador<T> getJugadorB();
-	template <class T>
-	void setJugadorB(Jugador<T>);
+	Jugador<T>* getJugadorA();
+	void setJugadorA(Jugador<T>*);
+	Jugador<T>* getJugadorB();
+	void setJugadorB(Jugador<T>*);
 	bool getIsGanador();
 	void setIsGanador(bool);
 	bool getTurno();
@@ -34,13 +31,10 @@ public:
 	std::string obtenerEstadoJuego(int);
 private:
 	Casilla** terreno;
-	template <class T>
-	Jugador<T> jugadorA;
-	template <class T>
-	Jugador<T> jugadorB;
+	Jugador<T>* jugadorA;
+	Jugador<T>* jugadorB;
 	bool isGanador;
 	bool turno;
-	template <class T>
 	ColaHistorial<T>* historial;
 };
 

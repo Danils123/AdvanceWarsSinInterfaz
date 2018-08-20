@@ -15,11 +15,13 @@ public:
 
 	void setColor(int);
 
-	void setUnidades(int);
+	void setUnidades(ListaUnidades<T>);
 
-	int getUnidades();
+    ListaUnidades<T>* getUnidades();
 
 	void registrarMovimiento();
+	
+	void inicializarListaUnidades();
 
 	/*std::string toString();*/
 
