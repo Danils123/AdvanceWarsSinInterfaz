@@ -7,13 +7,8 @@
 #include <string>
 using namespace std;
 
-<<<<<<< HEAD
-template <typename T>
-class Colas : public Lista <T>
-=======
 template <class T, class U>
 class Colas : public Lista <T, U>
->>>>>>> SinItnterfaz
 {
 
 public:

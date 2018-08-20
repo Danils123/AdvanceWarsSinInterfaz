@@ -21,7 +21,7 @@ public:
 	//Unidad setUnidad(int, int, int, int, int, int);
 	void reducirVida(int);
 private:
-	Lista<T, U*>* lista;
+	Lista<T, U>* lista;
 	NodoUnidades* cabeza;
 };
 

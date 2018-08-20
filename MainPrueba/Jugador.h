@@ -5,29 +5,21 @@
 #include <string>
 using namespace std;
 
-<<<<<<< HEAD
-
-template <typename T>
-=======
 template <class T, class U>
->>>>>>> SinItnterfaz
 class Jugador
 {
 public:
-	//Jugador(int, int);
-	//~Jugador();
+	Jugador(int, int);
+	~Jugador();
 	Colores getColor();
 
 	void setColor(int);
 
-	void setUnidades(ListaUnidades<T>*);
+	void setUnidades(int);
 
-    ListaUnidades<Unidad>* getUnidades();
+	int getUnidades();
 
 	void registrarMovimiento();
-	
-	template <class T>
-	void inicializarListaUnidades();
 
 	/*std::string toString();*/
 
@@ -38,4 +30,3 @@ private:
 };
 
 #endif /* JUGADOR_H */
-	

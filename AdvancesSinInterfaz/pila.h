@@ -6,12 +6,12 @@
 #include <string>
 using namespace std;
 
-template <typename T>
-class Pila : public Lista<T>
+template <class T, class U>
+class Pila : public Lista<T, U>
 {
 public:
-	virtual void apilar(T, T) = 0;
-	virtual void desapilar(T, T) = 0;
+	virtual void apilar(T, U) = 0;
+	virtual void desapilar(U) = 0;
 };
 
 #endif
