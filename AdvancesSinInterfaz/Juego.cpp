@@ -22,24 +22,24 @@ void Juego::setTerreno(Casilla** nTerreno)
 	this->terreno = nTerreno;
 }
 
-ListaJugadores* Juego::getEquipoA() 
+Jugador Juego::getEquipoA() 
 {
-	return this->equipoA;
+	return this->jugadorA;
 }
 
-void Juego::setEquipoA(ListaJugadores* nEquipoA)
+void Juego::setEquipoA(Jugador nEquipoA)
 {
-	this->equipoA = nEquipoA;
+	this->jugadorA = nEquipoA;
 }
 
-ListaJugadores* Juego::getEquipoB()
+Jugador Juego::getEquipoB()
 {
-	return this->equipoB;
+	return this->jugadorB;
 }
 
-void Juego::setEquipoB(ListaJugadores* nEquipoB)
+void Juego::setEquipoB(Jugador nEquipoB)
 {
-	this->equipoB = nEquipoB;
+	this->jugadorB = nEquipoB;
 }
 
 bool Juego::getIsGanador()

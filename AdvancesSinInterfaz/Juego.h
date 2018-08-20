@@ -14,10 +14,10 @@ public:
 	~Juego();
 	Casilla** getTerreno();
 	void setTerreno(Casilla**);
-	ListaJugadores* getEquipoA();
-	void setEquipoA(ListaJugadores*);
-	ListaJugadores* getEquipoB();
-	void setEquipoB(ListaJugadores*);
+	Jugador getEquipoA();
+	void setEquipoA(Jugador);
+	Jugador getEquipoB();
+	void setEquipoB(Jugador);
 	bool getIsGanador();
 	void setIsGanador(bool);
 	bool getTurno();
