@@ -24,24 +24,24 @@ void Juego::setTerreno(Casilla** nTerreno)
 }
 
 
-Jugador<Unidad, NodoUnidades*> Juego::getJugadorA()
+Jugador Juego::getJugadorA()
 {
 	return this->jugadorA;
 }
 
 
-void Juego::setJugadorA(Jugador<Unidad, NodoUnidades*> nJugadorA)
+void Juego::setJugadorA(Jugador nJugadorA)
 {
 	this->jugadorA = nJugadorA;
 }
 
 
-Jugador<Unidad, NodoUnidades*> Juego::getJugadorB()
+Jugador Juego::getJugadorB()
 {
 	return this->jugadorB;
 }
 
-void Juego::setJugadorB(Jugador<Unidad, NodoUnidades*> nJugadorB)
+void Juego::setJugadorB(Jugador nJugadorB)
 {
 	this->jugadorB = nJugadorB;
 }
@@ -80,7 +80,7 @@ std::string Juego::atacar(int tipoUnidad, std::vector<int> pocisionAtacar)
 {
 	std::string resultado = "";
 	
-	Jugador<Unidad, NodoUnidades*> jugadorActivo;
+	Jugador jugadorActivo;
 
 	if(this->turno)
 	{
@@ -111,8 +111,8 @@ bool Juego::mover(int equipo, int tipoUnidad, std::vector<int> pocisionMover)
 bool Juego::agregarJugador(int color, int equipo) 
 {
 	bool agregado = false;	
-	Jugador<Unidad, NodoUnidades*> *jpunt;
-	Jugador<Unidad, NodoUnidades*> jugador = this->getJugadorA();
+	Jugador *jpunt;
+	Jugador jugador = this->getJugadorA();
 	jpunt = &jugador;
 	jugador.setColor(color);
 

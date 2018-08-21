@@ -17,10 +17,10 @@ public:
 	~Juego();
 	Casilla** getTerreno();
 	void setTerreno(Casilla**);
-	Jugador<Unidad,NodoUnidades*> getJugadorA();
-	void setJugadorA(Jugador<Unidad, NodoUnidades*>);
-	Jugador<Unidad, NodoUnidades*> getJugadorB();
-	void setJugadorB(Jugador<Unidad, NodoUnidades*>);
+	Jugador getJugadorA();
+	void setJugadorA(Jugador);
+	Jugador getJugadorB();
+	void setJugadorB(Jugador);
 	bool getIsGanador();
 	void setIsGanador(bool);
 	bool getTurno();
@@ -34,8 +34,8 @@ public:
 	std::string obtenerEstadoJuego(int);
 private:
 	Casilla** terreno;
-	Jugador<Unidad, NodoUnidades*> jugadorA;
-	Jugador<Unidad, NodoUnidades*> jugadorB;
+	Jugador jugadorA;
+	Jugador jugadorB;
 	bool isGanador;
 	bool turno;
 	int cantTurnos;

@@ -5,8 +5,6 @@
 #include <string>
 using namespace std;
 
-template <class T, class U>
-
 class Jugador
 {
 public:
@@ -17,9 +15,9 @@ public:
 
 	void setColor(int);
 
-	void setUnidades(ListaUnidades<Unidad, NodoUnidades*>);
+	void setUnidades(ListaUnidades);
 
-    ListaUnidades<Unidad, NodoUnidades*> getUnidades();
+    ListaUnidades getUnidades();
 
 	void registrarMovimiento();
 	
@@ -31,7 +29,7 @@ public:
 private:
 
 	Colores color;
-	ListaUnidades<Unidad, NodoUnidades*> unidades;
+	ListaUnidades unidades;
 };
 
 #endif /* JUGADOR_H */

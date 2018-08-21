@@ -1,32 +1,28 @@
 #include "stdafx.h"
 #include "ListaUnidades.h"
+#include "Unidad.h"
 #include "PilaUnidades.h"
 #include "ColaUnidades.h"
 #include <sstream>
 
-template <class T, class U>
-ListaUnidades<T, U>::ListaUnidades()
+ListaUnidades::ListaUnidades()
 {
 	setCabeza(NULL);
 }
 
-template <class T, class U>
-NodoUnidades* ListaUnidades<T, U>::getCabeza() {
+NodoUnidades* ListaUnidades::getCabeza() {
 	return cabeza;
 };
 
-template <class T, class U>
-void ListaUnidades<T, U>::setCabeza(NodoUnidades* pcabeza) {
+void ListaUnidades::setCabeza(NodoUnidades* pcabeza) {
 	cabeza = pcabeza;
 };
 
-template <class T, class U>
-bool ListaUnidades<T, U>::isListaVacia() {
+bool ListaUnidades::isListaVacia() {
 	return getCabeza() == NULL;
 };
 
-template <class T, class U>
-NodoUnidades* ListaUnidades<T, U>::buscar(int id) {
+NodoUnidades* ListaUnidades::buscar(int id) {
 	NodoUnidades* aux = getCabeza();
 	while (aux != NULL) {
 		if (aux->getUnidad()->getId() == id) {
@@ -37,19 +33,16 @@ NodoUnidades* ListaUnidades<T, U>::buscar(int id) {
 	return NULL;
 };
 
-template <class T, class U>
-void ListaUnidades<T, U>::insertar(int pId, int pVida, int pRango, int pTipo, int pPosX, int pPosY) {
+void ListaUnidades::insertar(int pId, int pVida, int pRango, int pTipo, int pPosX, int pPosY) {
 	Unidad unidad(pId, pVida, pRango, pTipo, pPosX, pPosY);
 	lista->insertar(unidad, getCabeza());
 };
 
-template <class T, class U>
-void ListaUnidades<T, U>::eliminar() {
+void ListaUnidades::eliminar() {
 	lista->eliminar(getCabeza());
 };
 
-template <class T, class U>
-std::string ListaUnidades<T, U>::toString() {
+std::string ListaUnidades::toString() {
 	std::ostringstream s;
 	if (!isListaVacia()) {
 		NodoUnidades* aux = getCabeza();
@@ -69,7 +62,7 @@ std::string ListaUnidades<T, U>::toString() {
 			s << "\n";
 			s << "\n";
 			s << "\n";*/
-			aux = aux->getSiguiente();
+			aux = aux->getSig();
 		};
 	}
 	else {
@@ -78,29 +71,28 @@ std::string ListaUnidades<T, U>::toString() {
 	return s.str();
 };
 
-template <class T, class U>
-void ListaUnidades<T, U>::setLista(int tipo) {
+void ListaUnidades::setLista(int tipo) {
 	if (lista == NULL)
 	{
+		PilaUnidades<Unidad, NodoUnidades*> *pila = new PilaUnidades<Unidad, NodoUnidades*>;
+		ColaUnidades<Unidad, NodoUnidades*>* cola = new ColaUnidades<Unidad, NodoUnidades*>;
+
 		switch (tipo)
 		{
 		case 1:
-			PilaUnidades* pila;
-			lista = &pila;
+			lista = pila;
 			break;
 		case 2:
-			ColaUnidades* cola;
-			lista = &cola;
+			lista = cola;
 			break;
-		default:
-			PilaUnidades* pila;
-			lista = &pila;
-			break;
+		/*default:
+			PilaUnidades<Unidad, NodoUnidades*>* pila;
+			lista = pila;
+			break;*/
 		}
 	}
 };
 
-template <class T, class U>
-void ListaUnidades<T, U>::reducirVida(int valor) {
+void ListaUnidades::reducirVida(int valor) {
 	
 };

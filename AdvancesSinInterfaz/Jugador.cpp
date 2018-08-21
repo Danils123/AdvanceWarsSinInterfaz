@@ -1,8 +1,7 @@
 #include "stdafx.h"
 #include "Jugador.h"
 
-template <class T, class U>
-Jugador<T, U>::Jugador() {
+Jugador::Jugador() {
 
 };
 //
@@ -16,13 +15,12 @@ Jugador<T, U>::Jugador() {
 //Jugador::~Jugador()
 //{
 //}
-template <class T, class U>
-Colores Jugador<T,  U>::getColor() {
+
+Colores Jugador::getColor() {
 	return this->color;
 }
 
-template <class T, class U>
-void Jugador<T,  U>::setColor(int pColor) {
+void Jugador::setColor(int pColor) {
 	Colores colorP;
 	switch (pColor)
 	{
@@ -43,26 +41,22 @@ void Jugador<T,  U>::setColor(int pColor) {
 	color = colorP;
 }
 
-
-template <class T, class U>
-void Jugador<T,  U>::setUnidades(ListaUnidades<Unidad, NodoUnidades*> pUnidades) {
+void Jugador::setUnidades(ListaUnidades pUnidades) {
 	this->unidades = pUnidades;
 }
 
-template <class T, class U>
-ListaUnidades<Unidad, NodoUnidades*> Jugador<T,  U>::getUnidades() {
+
+ListaUnidades Jugador::getUnidades() {
 	return this->unidades;
 }
 
-template <class T, class U>
-void Jugador<T,  U>::registrarMovimiento() {
+void Jugador::registrarMovimiento() {
 
 };
 
-template <class T, class U>
-void Jugador<T, U>::inicializarListaUnidades(int nJugador)
+void Jugador::inicializarListaUnidades(int nJugador)
 {
-	ListaUnidades<Unidad, NodoUnidades*> lista;
+	ListaUnidades lista;
 	int posInX = 0;
 	int posInY = 0;
 

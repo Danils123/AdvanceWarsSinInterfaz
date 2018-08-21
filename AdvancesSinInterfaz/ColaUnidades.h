@@ -10,7 +10,7 @@ class ColaUnidades: public Colas <T, U>
 {
 public:
 	virtual void insertar(Unidad unidad, NodoUnidades* cabeza) {
-		encolar(cabeza, cabeza);
+		encolar(unidad, cabeza);
 	};
 
 	virtual void eliminar(NodoUnidades* cabeza) {

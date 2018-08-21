@@ -5,7 +5,7 @@
 #include "NodoUnidades.h"
 #include <string>
 
-template <class T, class U>
+
 class ListaUnidades
 {
 public:
@@ -21,7 +21,7 @@ public:
 	//Unidad setUnidad(int, int, int, int, int, int);
 	void reducirVida(int);
 private:
-	Lista<T, U*>* lista;
+	Lista<Unidad, NodoUnidades*>* lista;
 	NodoUnidades* cabeza;
 };
 

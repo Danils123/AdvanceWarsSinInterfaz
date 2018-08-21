@@ -20,7 +20,7 @@ public:
 	virtual void apilar(Unidad unidad, NodoUnidades* ultimo) 
 	{
 		NodoUnidades* nuevo = new NodoUnidades(unidad);
-		nuevo.setSig(ultimo);
+		nuevo->getSig();
 		ultimo = nuevo;
 	};
 
