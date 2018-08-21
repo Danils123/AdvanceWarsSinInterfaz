@@ -9,23 +9,25 @@ template <class T, class U>
 class ColaHistorial: public Colas <T, U>
 {
 public:
-	virtual void insertar(Historial registro, NodoHistorial* cabeza) {
-		encolar(registro, cabeza);
+	virtual NodoHistorial* insertar(Historial registro, NodoHistorial* cabeza) {
+		return encolar(registro, cabeza);
 	};
 
-	virtual void eliminar(NodoHistorial* cabeza) {
-		descolar(cabeza);
+	virtual NodoHistorial* eliminar(NodoHistorial* cabeza) {
+		return descolar(cabeza);
 	};
 
-	void encolar(Historial registro, NodoHistorial* cabeza) {
+	NodoHistorial* encolar(Historial registro, NodoHistorial* cabeza) {
 		NodoHistorial* nuevo = new NodoHistorial(registro);
 		cabeza->setSig(nuevo);
+		return cabeza;
 	};
 
-	void descolar(NodoHistorial* cabeza) {
+	NodoHistorial* descolar(NodoHistorial* cabeza) {
 		NodoHistorial* aux = cabeza;
 		cabeza = aux->getSig();
 		delete aux;
+		return cabeza;
 	};
 };
 

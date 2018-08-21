@@ -35,11 +35,11 @@ NodoUnidades* ListaUnidades::buscar(int id) {
 
 void ListaUnidades::insertar(int pId, int pVida, int pRango, int pTipo, int pPosX, int pPosY) {
 	Unidad unidad(pId, pVida, pRango, pTipo, pPosX, pPosY);
-	lista->insertar(unidad, getCabeza());
+	setCabeza(lista->insertar(unidad, getCabeza()));
 };
 
 void ListaUnidades::eliminar() {
-	lista->eliminar(getCabeza());
+	setCabeza(lista->eliminar(getCabeza()));
 };
 
 std::string ListaUnidades::toString() {

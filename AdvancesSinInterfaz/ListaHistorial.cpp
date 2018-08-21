@@ -40,12 +40,12 @@ std::vector<NodoHistorial*> ListaHistorial<T, U>::buscar(int jugador) {
 template <class T, class U>
 void ListaHistorial<T, U>::insertar(int jugador, std::vector<int> movimiento, int tipoUnidadAtacado, int tipoUnidadAtacante, int turno) {
 	Historial registro = setRegistro(jugador, movimiento, tipoUnidadAtacado, tipoUnidadAtacante, turno);
-	lista->insertar(registro, getCabeza());
+	setCabeza(lista->insertar(registro, getCabeza()));
 };
 
 template <class T, class U>
 void ListaHistorial<T, U>::eliminar() {
-	lista->eliminar();
+	setCabeza(lista->eliminar());
 };
 
 template <class T, class U>

@@ -12,8 +12,8 @@ class Colas : public Lista <T, U>
 {
 
 public:
-	virtual void encolar(T, U) = 0;
-	virtual void descolar(U) = 0;
+	virtual U encolar(T, U) = 0;
+	virtual U descolar(U) = 0;
 };
 
 #endif

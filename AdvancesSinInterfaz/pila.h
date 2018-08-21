@@ -10,8 +10,8 @@ template <class T, class U>
 class Pila : public Lista<T, U>
 {
 public:
-	virtual void apilar(T, U) = 0;
-	virtual void desapilar(U) = 0;
+	virtual U apilar(T, U) = 0;
+	virtual U desapilar(U) = 0;
 };
 
 #endif

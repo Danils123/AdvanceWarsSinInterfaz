@@ -133,7 +133,7 @@ void Juego::agregarGenerarMapa(int cantFilas , int cantColumnas)
 	for(int i = 0; i < cantFilas; i++)
 	{
 		ntablero[i] = new Casilla[cantColumnas];
-		for(int j = 0; i< cantColumnas; j++)
+		for(int j = 0; j< cantColumnas; j++)
 		{
 			ntablero[i][j] =  Casilla(i, j, false, 0);
 		}

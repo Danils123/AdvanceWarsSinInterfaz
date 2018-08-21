@@ -9,23 +9,25 @@ template <class T, class U>
 class ColaUnidades: public Colas <T, U>
 {
 public:
-	virtual void insertar(Unidad unidad, NodoUnidades* cabeza) {
-		encolar(unidad, cabeza);
+	virtual NodoUnidades* insertar(Unidad unidad, NodoUnidades* cabeza) {
+		 return encolar(unidad, cabeza);
 	};
 
-	virtual void eliminar(NodoUnidades* cabeza) {
-		descolar(cabeza);
+	virtual NodoUnidades* eliminar(NodoUnidades* cabeza) {
+		return descolar(cabeza);
 	};
 
-	void encolar(Unidad unidad, NodoUnidades* cabeza) {
+	NodoUnidades* encolar(Unidad unidad, NodoUnidades* cabeza) {
 		NodoUnidades* nuevo = new NodoUnidades(unidad);
 		cabeza->setSig(nuevo);
+		return cabeza;
 	};
 
-	void descolar(NodoUnidades* cabeza) {
+	NodoUnidades* descolar(NodoUnidades* cabeza) {
 		NodoUnidades* aux = cabeza;
 		cabeza = aux->getSig();
 		delete aux;
+		return cabeza;
 	};
 };
 

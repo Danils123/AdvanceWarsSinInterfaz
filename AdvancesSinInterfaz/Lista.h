@@ -8,8 +8,8 @@ class Lista
 {
 
 public:
-	virtual void insertar(T, U) = 0;
-	virtual void eliminar(U) = 0;
+	virtual U insertar(T, U) = 0;
+	virtual U eliminar(U) = 0;
 };
 
 #endif
