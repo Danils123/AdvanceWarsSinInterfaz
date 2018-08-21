@@ -11,27 +11,27 @@ class Jugador
 {
 public:
 	Jugador();
-	Jugador(int, int);
-	~Jugador();
+	//Jugador(int, int);
+	//~Jugador();
 	Colores getColor();
 
 	void setColor(int);
 
-	void setUnidades(ListaUnidades<T, U>*);
+	void setUnidades(ListaUnidades<Unidad, NodoUnidades*>);
 
-    ListaUnidades<T, U>* getUnidades();
+    ListaUnidades<Unidad, NodoUnidades*> getUnidades();
 
 	void registrarMovimiento();
 	
-	template <class T, U>
-	void inicializarListaUnidades();
+	//template <class T, class U>
+	void inicializarListaUnidades(int);
 
 	/*std::string toString();*/
 
 private:
 
 	Colores color;
-	ListaUnidades<T, U> unidades;
+	ListaUnidades<Unidad, NodoUnidades*> unidades;
 };
 
 #endif /* JUGADOR_H */

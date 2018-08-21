@@ -76,26 +76,25 @@ void Juego::setHistorial(ColaHistorial<Historial, NodoHistorial*>* nHistorial)
 	this->historial = nHistorial;
 }
 
-template <class T, class U>
 std::string Juego::atacar(int tipoUnidad, std::vector<int> pocisionAtacar)
 {
 	std::string resultado = "";
 	
-	Jugador<T, U>* jugadorActivo;
+	Jugador<Unidad, NodoUnidades*> jugadorActivo;
 
 	if(this->turno)
 	{
-		template <class T, class U>
+	
 		jugadorActivo = this->getJugadorA();
 	}
 	else
 	{
-		template <class T, class U>
+		
 		jugadorActivo = this->getJugadorB();
 	}
 
-	//template <class T, class U>
-	Unidad* unidad = jugadorActivo->getUnidades()->buscar(tipoUnidad)->getUnidad();
+	
+	Unidad *unidad = jugadorActivo.getUnidades().buscar(tipoUnidad)->getUnidad();
 	
 
 	return resultado;
@@ -112,9 +111,12 @@ bool Juego::mover(int equipo, int tipoUnidad, std::vector<int> pocisionMover)
 bool Juego::agregarJugador(int color, int equipo) 
 {
 	bool agregado = false;	
-	Jugador<T, U> *jugador = new Jugador<T, U>;
-	jugador->setColor(color);
-	if(this->getJugadorA() != NULL)
+	Jugador<Unidad, NodoUnidades*> *jpunt;
+	Jugador<Unidad, NodoUnidades*> jugador = this->getJugadorA();
+	jpunt = &jugador;
+	jugador.setColor(color);
+
+	if(jpunt != NULL)
 	{
 		this->setJugadorB(jugador);
 	}

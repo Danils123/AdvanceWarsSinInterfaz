@@ -25,7 +25,6 @@ public:
 	void setIsGanador(bool);
 	bool getTurno();
 	void setTurno(bool);
-
 	ColaHistorial<Historial, NodoHistorial*>* getHistorial();
 	void setHistorial(ColaHistorial<Historial, NodoHistorial*>*);
 	std::string atacar(int, std::vector<int>);
