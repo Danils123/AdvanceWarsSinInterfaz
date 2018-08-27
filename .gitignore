@@ -259,3 +259,10 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+AdvancesSinInterfaz.sln
+AdvancesSinInterfaz/AdvancesSinInterfaz.rc
+AdvancesSinInterfaz/AdvancesSinInterfaz.vcxproj.filters
+*.filters
+*.vcxproj
+*.sln
+*.sln

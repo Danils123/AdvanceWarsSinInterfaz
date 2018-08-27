@@ -5,28 +5,32 @@
 #include <string>
 using namespace std;
 
-template <typename T>
 class Jugador
 {
 public:
-	Jugador(int, int);
-	~Jugador();
+	Jugador();
+	//Jugador(int, int);
+	//~Jugador();
 	Colores getColor();
 
 	void setColor(int);
 
-	void setUnidades(int);
+	void setUnidades(ListaUnidades);
 
-	int getUnidades();
+    ListaUnidades getUnidades();
 
 	void registrarMovimiento();
+	
+	//template <class T, class U>
+	void inicializarListaUnidades(int);
 
 	/*std::string toString();*/
 
 private:
 
 	Colores color;
-	ListaUnidades<T>* unidades;
+	ListaUnidades unidades;
 };
 
 #endif /* JUGADOR_H */
+	

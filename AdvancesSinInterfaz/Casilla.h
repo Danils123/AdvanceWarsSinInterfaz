@@ -6,6 +6,7 @@ class Casilla
 {
 public:
 	Casilla(int, int, bool, int);
+	Casilla();
 	~Casilla();
 
 	int getX();

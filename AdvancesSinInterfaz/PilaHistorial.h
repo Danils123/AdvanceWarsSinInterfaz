@@ -6,26 +6,28 @@
 class PilaHistorial
 {
 public:
-	virtual void insertar(Historial registro, NodoHistorial* ultimo) {
+	virtual NodoHistorial* insertar(Historial registro, NodoHistorial* ultimo) {
 		apilar(registro, ultimo);
 	};
 
-	virtual void eliminar(NodoHistorial* ultimo) {
+	virtual NodoHistorial* eliminar(NodoHistorial* ultimo) {
 		desapilar(ultimo);
 	};
 
-	virtual void apilar(Historial registro, NodoHistorial* ultimo)
+	virtual NodoHistorial* apilar(Historial registro, NodoHistorial* ultimo)
 	{
 		NodoHistorial* nuevo = new NodoHistorial(registro);
 		nuevo->setSig(ultimo);
 		ultimo = nuevo;
+		return ultimo;
 	};
 
-	virtual void desapilar(NodoHistorial* ultimo)
+	virtual NodoHistorial* desapilar(NodoHistorial* ultimo)
 	{
 		NodoHistorial* aux = ultimo;
 		ultimo = aux->getSig();
 		delete aux;
+		return ultimo;
 	};
 };
 

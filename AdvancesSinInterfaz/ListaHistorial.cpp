@@ -3,23 +3,23 @@
 #include "PilaHistorial.h"
 #include "ColaHistorial.h"
 #include <vector>
-template <typename T>
-NodoHistorial* ListaHistorial<T>::getCabeza() {
+template <class T, class U>
+NodoHistorial* ListaHistorial<T, U>::getCabeza() {
 	return cabeza;
 };
 
-template <typename T>
-void ListaHistorial<T>::setCabeza(NodoHistorial* pCabeza) {
+template <class T, class U>
+void ListaHistorial<T, U>::setCabeza(NodoHistorial* pCabeza) {
 	cabeza = pCabeza;
 };
 
-template <typename T>
-bool ListaHistorial<T>::isListaVacia() {
+template <class T, class U>
+bool ListaHistorial<T, U>::isListaVacia() {
 	return getCabeza() == NULL;
 };
 
-template <typename T>
-std::vector<NodoHistorial*> ListaHistorial<T>::buscar(int jugador) {
+template <class T, class U>
+std::vector<NodoHistorial*> ListaHistorial<T, U>::buscar(int jugador) {
 	NodoHistorial* aux = getCabeza();
 	std::vector<NodoHistorial*> historialJugador;
 	if (!isListaVacia()) {
@@ -37,52 +37,52 @@ std::vector<NodoHistorial*> ListaHistorial<T>::buscar(int jugador) {
 	return historialJugador;
 };
 
-template <typename T>
-void ListaHistorial<T>::insertar(int jugador, std::vector<int> movimiento, int tipoUnidadAtacado, int tipoUnidadAtacante, int turno) {
+template <class T, class U>
+void ListaHistorial<T, U>::insertar(int jugador, std::vector<int> movimiento, int tipoUnidadAtacado, int tipoUnidadAtacante, int turno) {
 	Historial registro = setRegistro(jugador, movimiento, tipoUnidadAtacado, tipoUnidadAtacante, turno);
-	lista.insertar(registro, getCabeza());
+	setCabeza(lista->insertar(registro, getCabeza()));
 };
 
-template <typename T>
-void ListaHistorial<T>::eliminar() {
-	lista.eliminar();
+template <class T, class U>
+void ListaHistorial<T, U>::eliminar() {
+	setCabeza(lista->eliminar());
 };
 
-template <typename T>
-std::string ListaHistorial<T>::toString() {
+template <class T, class U>
+std::string ListaHistorial<T, U>::toString() {
 	return " ";
 };
 
-template <typename T>
-void ListaHistorial<T>::setLista(int tipo) {
+template <class T, class U>
+void ListaHistorial<T, U>::setLista(int tipo) {
 	if (lista == NULL)
 	{
 		switch (tipo)
 		{
 		case 1:
-			PilaHistorial pila;
-			lista = pila;
+			PilaHistorial* pila;
+			lista = &pila;
 			break;
 		case 2:
-			ColaHistorial cola;
-			lista = cola;
+			ColaHistorial* cola;
+			lista = &cola;
 			break;
 		default:
-			PilaHistorial pila;
-			lista = pila;
+			PilaHistorial* pila;
+			lista = &pila;
 			break;
 		}
 	}
 };
 
-template <typename T>
-Historial ListaHistorial<T>::setRegistro(int jugador, std::vector<int> movimiento, int tipoUnidadAtacado, int tipoUnidadAtacante, int turno) {
+template <class T, class U>
+Historial ListaHistorial<T, U>::setRegistro(int jugador, std::vector<int> movimiento, int tipoUnidadAtacado, int tipoUnidadAtacante, int turno) {
 	Historial registro;
-	setJugador(jugador);
-	setMovimiento(movimiento);
-	setTipoUnidadAtacado(tipoUnidadAtacado);
-	setTipoUnidadAtacante(tipoUnidadAtacante);
-	setTurno(turno);
+	registro.setJugador(jugador);
+	registro.setMovimiento(movimiento);
+	registro.setTipoUnidadAtacado(tipoUnidadAtacado);
+	registro.setTipoUnidadAtacante(tipoUnidadAtacante);
+	registro.setTurno(turno);
 
 	return registro;
 };

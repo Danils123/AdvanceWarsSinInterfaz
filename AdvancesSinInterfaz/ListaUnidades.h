@@ -1,10 +1,11 @@
+#pragma once
 #ifndef LISTAUNIDADES_H
 #define LISTAUNIDADES_H
 #include "Lista.h"
 #include "NodoUnidades.h"
 #include <string>
 
-template <typename T>
+
 class ListaUnidades
 {
 public:
@@ -17,10 +18,10 @@ public:
 	void eliminar();
 	std::string toString();
 	void setLista(int);
-	Unidad setUnidad(int, int, int, int, int, int);
+	//Unidad setUnidad(int, int, int, int, int, int);
 	void reducirVida(int);
 private:
-	Lista< T > lista;
+	Lista<Unidad, NodoUnidades*>* lista;
 	NodoUnidades* cabeza;
 };
 

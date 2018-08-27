@@ -6,14 +6,14 @@
 
 #include <string>
 using namespace std;
-template <typename T>
 
-class Colas : public Lista <T>
+template <class T, class U>
+class Colas : public Lista <T, U>
 {
 
 public:
-	virtual void encolar(T) = 0;
-	virtual void descolar(T) = 0;
+	virtual U encolar(T, U) = 0;
+	virtual U descolar(U) = 0;
 };
 
 #endif

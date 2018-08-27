@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "Jugador.h"
 
+Jugador::Jugador() {
+
+};
 //
 //Jugador::Jugador(int color, int unidades)
 //{
@@ -12,13 +15,12 @@
 //Jugador::~Jugador()
 //{
 //}
-template <typename T>
-Colores Jugador<T>::getColor() {
+
+Colores Jugador::getColor() {
 	return this->color;
 }
 
-template <typename T>
-void Jugador<T>::setColor(int pColor) {
+void Jugador::setColor(int pColor) {
 	Colores colorP;
 	switch (pColor)
 	{
@@ -38,20 +40,45 @@ void Jugador<T>::setColor(int pColor) {
 
 	color = colorP;
 }
-template <typename T>
-void Jugador<T>::setUnidades(int pUnidades) {
+
+void Jugador::setUnidades(ListaUnidades pUnidades) {
 	this->unidades = pUnidades;
 }
 
-template <typename T>
-int Jugador<T>::getUnidades() {
+
+ListaUnidades Jugador::getUnidades() {
 	return this->unidades;
 }
-template <typename T>
-void Jugador<T>::registrarMovimiento() {
+
+void Jugador::registrarMovimiento() {
 
 };
 
+void Jugador::inicializarListaUnidades(int nJugador)
+{
+	ListaUnidades lista;
+	int posInX = 0;
+	int posInY = 0;
+
+	if(nJugador == 2)
+	{
+		posInX = 3;
+		posInY = 5;
+
+		lista.insertar(0, 5, 3, 0, posInX, posInY);
+		lista.insertar(1, 3, 2, 1, posInX, posInY - 1);
+		lista.insertar(2, 7, 4, 2, posInX -1, posInY);
+		this->setUnidades(lista);
+	}
+	else
+	{
+		lista.insertar(0, 5, 3, 0, posInX, posInY);
+		lista.insertar(1, 3, 2, 1, posInX, posInY + 1);
+		lista.insertar(2, 7, 4, 2, posInX + 1, posInY);
+		this->setUnidades(lista);
+	}
+	
+}
 //std::string toString() {
 //	return "";
 //};

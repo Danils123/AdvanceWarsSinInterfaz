@@ -1,32 +1,28 @@
 #include "stdafx.h"
 #include "ListaUnidades.h"
+#include "Unidad.h"
 #include "PilaUnidades.h"
 #include "ColaUnidades.h"
 #include <sstream>
 
-template <typename T>
-ListaUnidades<T>::ListaUnidades()
+ListaUnidades::ListaUnidades()
 {
 	setCabeza(NULL);
 }
 
-template <typename T>
-NodoUnidades* ListaUnidades<T>::getCabeza() {
+NodoUnidades* ListaUnidades::getCabeza() {
 	return cabeza;
 };
 
-template <typename T>
-void ListaUnidades<T>::setCabeza(NodoUnidades* pcabeza) {
+void ListaUnidades::setCabeza(NodoUnidades* pcabeza) {
 	cabeza = pcabeza;
 };
 
-template <typename T>
-bool ListaUnidades<T>::isListaVacia() {
+bool ListaUnidades::isListaVacia() {
 	return getCabeza() == NULL;
 };
 
-template <typename T>
-NodoUnidades* ListaUnidades<T>::buscar(int id) {
+NodoUnidades* ListaUnidades::buscar(int id) {
 	NodoUnidades* aux = getCabeza();
 	while (aux != NULL) {
 		if (aux->getUnidad()->getId() == id) {
@@ -37,31 +33,16 @@ NodoUnidades* ListaUnidades<T>::buscar(int id) {
 	return NULL;
 };
 
-template <typename T>
-Unidad ListaUnidades<T>::setUnidad(int pId, int pVida, int pRango, int pTipo, int pPosX, int pPosY) {
-	Unidad unidad;
-	unidad.setEstado(true);
-	unidad.setId(pId);
-	unidad.setPosX(pPosX);
-	unidad.setPosY(pPosY);
-	unidad.setRango(pRango);
-	unidad.setTipo(pTipo);
-	unidad.setVida(pVida);
+void ListaUnidades::insertar(int pId, int pVida, int pRango, int pTipo, int pPosX, int pPosY) {
+	Unidad unidad(pId, pVida, pRango, pTipo, pPosX, pPosY);
+	setCabeza(lista->insertar(unidad, getCabeza()));
 };
 
-template <typename T>
-void ListaUnidades<T>::insertar(int pId, int pVida, int pRango, int pTipo, int pPosX, int pPosY) {
-	Unidad unidad = setUnidad(pId, pVida, pRango, pTipo, pPosX, pPosY);
-	lista.insertar(unidad, getCabeza());
+void ListaUnidades::eliminar() {
+	setCabeza(lista->eliminar(getCabeza()));
 };
 
-template <typename T>
-void ListaUnidades<T>::eliminar() {
-	lista.eliminar(getCabeza());
-};
-
-template <typename T>
-std::string ListaUnidades<T>::toString() {
+std::string ListaUnidades::toString() {
 	std::ostringstream s;
 	if (!isListaVacia()) {
 		NodoUnidades* aux = getCabeza();
@@ -81,7 +62,7 @@ std::string ListaUnidades<T>::toString() {
 			s << "\n";
 			s << "\n";
 			s << "\n";*/
-			aux = aux->getSiguiente();
+			aux = aux->getSig();
 		};
 	}
 	else {
@@ -90,29 +71,28 @@ std::string ListaUnidades<T>::toString() {
 	return s.str();
 };
 
-template <typename T>
-void ListaUnidades<T>::setLista(int tipo) {
+void ListaUnidades::setLista(int tipo) {
 	if (lista == NULL)
 	{
+		PilaUnidades<Unidad, NodoUnidades*> *pila = new PilaUnidades<Unidad, NodoUnidades*>;
+		ColaUnidades<Unidad, NodoUnidades*>* cola = new ColaUnidades<Unidad, NodoUnidades*>;
+
 		switch (tipo)
 		{
 		case 1:
-			PilaUnidades pila;
 			lista = pila;
 			break;
 		case 2:
-			ColaUnidades cola;
 			lista = cola;
 			break;
-		default:
-			PilaUnidades pila;
+		/*default:
+			PilaUnidades<Unidad, NodoUnidades*>* pila;
 			lista = pila;
-			break;
+			break;*/
 		}
 	}
 };
 
-template <typename T>
-void ListaUnidades<T>::reducirVida(int valor) {
+void ListaUnidades::reducirVida(int valor) {
 	
 };
